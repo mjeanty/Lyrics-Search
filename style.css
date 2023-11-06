@@ -1,0 +1,46 @@
+*{ 
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+button {
+    cursor:pointer;
+
+}
+
+button:active {
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -moz-transform: scale(.95);
+    -ms-transform: scale(.95);
+    -o-transform: scale(.95);
+}
+
+
+input:focus,button:focus {
+    outline:none;
+
+}
+
+header {
+    background-image: url('https://media.istockphoto.com/id/1334754823/photo/shanty-town-on-the-edge-of-port-au-prince.jpg?s=2048x2048&w=is&k=20&c=VIuO6YhVUzVIUkC83-OoLP4e5OsZFYAGx5ilpFwMSoM=');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+
+
