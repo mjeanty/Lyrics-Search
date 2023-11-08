@@ -52,14 +52,21 @@ function showData(data){
 
     if(data.prev || data.next){
         more.innerHTML = `
-           ${data.prev ? `<button class="btn">Prev</button>` : ''} 
-           ${data.next ? `<button class="btn">Next</button>` : ''} 
+           ${data.prev ? `<button class="btn"onclick="getMoreSongs('${data.prev}')" >Prev</button>` : ''} 
+           ${data.next ? `<button class="btn"onclick="getMoreSongs('${data.next}')">Next</button>` : ''} 
         
         `;
     } else {
         more.innerHTML = ''
     }
 
+}
+
+//get more songs prev and next
+async function getMoreSongs(url) {
+    const res = await fetch(`https://cors-anywhere.herokuapp.com/${url}`)
+    const data = await res.json()
+    showData(data)
 }
 
 // event Listener
