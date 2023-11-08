@@ -14,29 +14,10 @@ async function searchSongs(term) {
     showData(data)
 }
 
+
 ///show sng and artist in DOM
 function showData(data){
-    // let output = '';
-
-    // data.data.forEach(song => {
-    //     output += ` 
-    //         <li>
-    //             <span><strong>${song.artist.name}</strong> - 
-    //             ${song.title}</span>
-    //             <button class="btn" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics</button>
-    //         </li>
-        
-        
-    //     `;
-        
-
-    // })
-    // result.innerHTML =`
-    //     <ul class="songs">
-    //     ${output}
-    //     </ul>
-    
-    // `;
+   
     result.innerHTML =`
         <ul class="songs">
             ${data.data.map(song => ` 
@@ -69,6 +50,18 @@ async function getMoreSongs(url) {
     showData(data)
 }
 
+//get lyrics
+async function getLyrics(artist, songTitle) {
+    const res = await fetch(`${apiURL}/v1/${artist}/${songTitle}`);
+    const data = await res.json();
+    
+   
+    
+}
+
+
+
+
 // event Listener
 
 form.addEventListener('submit', e => {
@@ -89,6 +82,10 @@ form.addEventListener('submit', e => {
 result.addEventListener('click', e => {
     const clickedEl = e.target
     if(clickedEl.tagName === 'BUTTON'){
-        console.log(123)
+        
+        const artist = clickedEl.getAttribute('data-artist')
+        const songTitle = clickedEl.getAttribute('data-songtitle')
+
+        getLyrics(artist, songTitle)
     }
 })
