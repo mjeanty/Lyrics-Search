@@ -84,3 +84,11 @@ form.addEventListener('submit', e => {
 
     }
 })
+
+// get lyrics button click
+result.addEventListener('click', e => {
+    const clickedEl = e.target
+    if(clickedEl.tagName === 'BUTTON'){
+        console.log(123)
+    }
+})
